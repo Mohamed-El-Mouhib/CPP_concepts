@@ -1,9 +1,7 @@
-# Object files
 *.o
-*.obj
-
-# Libraries
-*.a
 
 Module00/ex01/PhoneBook
 Module00/ex00/megaphone
+
+Module00/ex01/Zombie
+Module01/ex00/Horde_of_Zombies
