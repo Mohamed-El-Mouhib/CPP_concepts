@@ -1,8 +1,6 @@
 *.o
-
-Module00/ex01/PhoneBook
-Module00/ex00/megaphone
-
-Module01/ex00/Zombie
-Module01/ex01/Horde_of_Zombies
+*PhoneBook
+*megaphone
+*Zombie
+*Horde_of_Zombies
 *a.out
