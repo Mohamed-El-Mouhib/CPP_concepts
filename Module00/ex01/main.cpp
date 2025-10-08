@@ -9,8 +9,9 @@ int main()
    while (true)
    {
       std::cout << "COMMAND: ";
-      std::getline(std::cin, input);
-      if (input == "ADD")
+      if (!std::getline(std::cin, input))
+         break ;
+      else if (input == "ADD")
          book.add_();
       else if (input == "EXIT")
          break;
@@ -18,7 +19,5 @@ int main()
          book.search_();
       else if (input != "\0")
          std::cout << "COMMAND NOT FOUND" << "\n";
-      else
-         break;
    }
 }

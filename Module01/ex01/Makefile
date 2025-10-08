@@ -1,10 +1,12 @@
 CC     = c++
-SRC    = main.cpp PhoneBook.cpp
+SRC    = main.cpp Zombie.cpp zombieHorde.cpp
 OBJ    = $(SRC:%.cpp=%.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME   = PhoneBook
+NAME   = Horde_of_Zombies
+# HEADERS   = *.hpp
 
 all: $(NAME)
+ # $(HEADERS)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
