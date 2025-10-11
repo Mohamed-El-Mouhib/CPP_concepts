@@ -17,20 +17,56 @@ static bool phone_check_(std::string &input)
    }
    return true;
 }
+
+bool empty_( std::string &str)
+{
+   bool  toggle = false;
+
+   for (int i = 0; i < str.size(); i++)
+   {
+      if (str[i] != ' ' && !(str[i] >= 9 && str[i] <= 13))
+         return false;
+   }
+   return true;
+}
+
 void PhoneBook::add_()
 {
-   std::cout << "PhoneNumber: ";
-   if (!std::getline(std::cin, users[ind].PhoneNumber)) exit(1);
-   if (!phone_check_(users[ind].PhoneNumber))
-      return;
-   std::cout << "FirstName: ";
-   if (!std::getline(std::cin, users[ind].FirstName)) exit(1);
-   std::cout << "LastName: ";
-   if (!std::getline(std::cin, users[ind].LastName)) exit(1);
-   std::cout << "NickName: ";
-   if (!std::getline(std::cin, users[ind].NickName)) exit(1);
-   std::cout << "Darkest Secret: ";
-   if (!std::getline(std::cin, users[ind].DarkestSecret)) exit(1);
+   while (1)
+   {
+      std::cout << "PhoneNumber: ";
+      if (!std::getline(std::cin, users[ind].PhoneNumber)) exit(1);
+      if ( phone_check_(users[ind].PhoneNumber) && !empty_(users[ind].PhoneNumber) )
+         break;
+   }
+   while (1)
+   {
+      std::cout << "FirstName: ";
+      if (!std::getline(std::cin, users[ind].FirstName)) exit(1);
+      if (!empty_(users[ind].FirstName))
+         break;
+   }
+   while (1)
+   {
+      std::cout << "LastName: ";
+      if (!std::getline(std::cin, users[ind].LastName)) exit(1);
+      if (!empty_(users[ind].LastName))
+         break;
+   }
+   while (1)
+   {
+      std::cout << "NickName: ";
+      if (!std::getline(std::cin, users[ind].NickName)) exit(1);
+      if (!empty_(users[ind].NickName))
+         break;
+   }
+   while (1)
+   {
+      std::cout << "Darkest Secret: ";
+      if (!std::getline(std::cin, users[ind].DarkestSecret)) exit(1);
+      if (!empty_(users[ind].DarkestSecret))
+         break;
+   }
    users[ind].index = ind;
    ind = (ind + 1) % 8;
 }
@@ -94,6 +130,7 @@ static void list_ontable(Contact (&users)[8])
       std::cout << "|\n" << " ----------" << " ----------" << " ----------" << " ----------" << "\n";
    }
 }
+
 void PhoneBook::search_()
 {
    std::string input;
