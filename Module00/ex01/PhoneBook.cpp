@@ -3,10 +3,11 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 static bool phone_check_(std::string &input)
 {
-   for (int i = 0; input.size() > i; i++)
+   for (size_t i = 0; input.size() > i; i++)
    {
       char c = input[i];
       if ((!(c >= '0' && c <= '9') && i != 0)
@@ -20,9 +21,7 @@ static bool phone_check_(std::string &input)
 
 bool empty_( std::string &str)
 {
-   bool  toggle = false;
-
-   for (int i = 0; i < str.size(); i++)
+   for (size_t i = 0; i < str.size(); i++)
    {
       if (str[i] != ' ' && !(str[i] >= 9 && str[i] <= 13))
          return false;
@@ -30,7 +29,7 @@ bool empty_( std::string &str)
    return true;
 }
 
-void PhoneBook::add_()
+void PhoneBook::add_( void )
 {
    while (1)
    {
@@ -78,7 +77,7 @@ PhoneBook::PhoneBook()
 
 static bool  check_input(std::string& str)
 {
-   for (int i = 0; str.size() > i; i++)
+   for (size_t i = 0; str.size() > i; i++)
    {
       char c = str[i];
       if (!std::isdigit(c))
@@ -93,17 +92,17 @@ static bool  check_input(std::string& str)
    return true;
 }
 
-static void list_info(int index, Contact (&users)[8])
+static void list_info(long index, Contact (&users)[8])
 {
    if (index < 0 || index > 7)
       std::cout << "Index out of bounds. Enter a valid value." << "\n";
    else if (users[index].index != -1)
    {
-      std::cout << "First Name : "<< users[index].FirstName << "\n";
-      std::cout << "Last Name : "<< users[index].LastName << "\n";
-      std::cout << "Nickname : "<< users[index].NickName << "\n";
-      std::cout << "Phone Number : +"<< users[index].PhoneNumber << "\n";
-      std::cout << "Darkest Secret : "<< users[index].DarkestSecret << "\n";
+      std::cout << "First Name : "<< users[index].FirstName << "\n"
+                << "Last Name : "<< users[index].LastName << "\n"
+                << "Nickname : "<< users[index].NickName << "\n"
+                << "Phone Number : "<< users[index].PhoneNumber << "\n"
+                << "Darkest Secret : "<< users[index].DarkestSecret << "\n";
    }
    else
       std::cout << "this user no setted yet" << "\n";
@@ -111,7 +110,7 @@ static void list_info(int index, Contact (&users)[8])
 
 static void list_ontable(Contact (&users)[8])
 {
-   for (int i = 0; i < 8; i++)
+   for (size_t i = 0; i < 8; i++)
    {
       if (users[i].index == -1) break;
       std::cout << "|" << std::setw(10) << users[i].index;
@@ -134,7 +133,6 @@ static void list_ontable(Contact (&users)[8])
 void PhoneBook::search_()
 {
    std::string input;
-   int   i;
 
    std::cout << " ----------" << " ----------" << " ----------" << " ----------" << "\n";
    std::cout << "|" << std::setw(10) << "index";
@@ -146,5 +144,5 @@ void PhoneBook::search_()
    std::cout << "SEARCH FOR INDEX: ";
    if (!std::getline(std::cin, input)) exit(1);
    if (!check_input(input)) return;
-   list_info(std::stoi(input, NULL), users);
+   list_info(std::atol(input.c_str()), users);
 }

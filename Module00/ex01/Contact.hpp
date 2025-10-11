@@ -6,7 +6,8 @@
 class Contact
 {
    public:
-      int index = -1;
+      Contact( void );
+      int index;
       std::string FirstName;
       std::string NickName;
       std::string LastName;

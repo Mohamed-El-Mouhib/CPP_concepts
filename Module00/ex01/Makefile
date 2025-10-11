@@ -1,13 +1,13 @@
 CC     = c++
-SRC    = main.cpp PhoneBook.cpp
+SRC    = main.cpp PhoneBook.cpp Contact.cpp
 OBJ    = $(SRC:%.cpp=%.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME   = PhoneBook
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf *.o

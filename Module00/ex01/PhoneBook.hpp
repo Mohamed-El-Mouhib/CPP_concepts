@@ -4,14 +4,11 @@
 
 class PhoneBook
 {
-	//access specifiers
 	private:
       int ind;
       Contact users[8];
-
-	//access specifiers
 	public:
       PhoneBook();
-      void add_();
-      void search_();
+      void add_( void );
+      void search_( void );
 };

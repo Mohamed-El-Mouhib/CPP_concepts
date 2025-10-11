@@ -109,7 +109,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 }
 
 Account::Account( int initial_deposit )
-: _amount(initial_deposit), _accountIndex(_nbAccounts)
+:_accountIndex(_nbAccounts), _amount(initial_deposit)
 {
    _nbAccounts++;
    _totalAmount += initial_deposit;
