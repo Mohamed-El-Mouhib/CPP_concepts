@@ -1,7 +1,7 @@
 CC     = c++
 SRC    = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ    = $(SRC:%.cpp=%.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME   = a.out
 
 all: $(NAME)
