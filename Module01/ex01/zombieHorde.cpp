@@ -5,8 +5,7 @@ Zombie* zombieHorde( int N, std::string name )
 	void	*tmp = operator new(sizeof(Zombie) * N);
 	Zombie	*ptr;
 
-	if (!tmp)
-		exit(1);
+	if (!tmp) exit(1);
 
 	ptr = static_cast<Zombie *>(tmp);
 

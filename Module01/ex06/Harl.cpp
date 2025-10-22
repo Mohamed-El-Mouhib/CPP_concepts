@@ -1,4 +1,5 @@
 #include "Harl.hpp"
+#include <iostream>
 #include <string>
 
 Harl::Harl( void )
@@ -15,40 +16,61 @@ Harl::Harl( void )
 
 void	Harl::complain( std::string level )
 {
+	int	it = -1;
 	for ( int i = 0; i < 4; i++ )
 	{
 		if (level == lvls[i])
 		{
-			(this->*table[i])(); return;
+			it = i; break;
 		}
 	}
-	(this->*table[3])();
+	switch (it)
+	{
+		case -1:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+		case 0:
+			(this->*table[0])();
+			Harl::complain( "INFO" );
+			break;
+		case 1:
+			(this->*table[1])();
+			Harl::complain( "WARNING" );
+			break;
+		case 2:
+			(this->*table[2])();
+			Harl::complain( "ERROR" );
+			break;
+		case 3:
+			(this->*table[3])();
+			break;
+	}
 }
 
 void	Harl::debug( void )
 {
 	std::cout << "[ DEBUG ]" << "\n";
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << "\n";
-	std::cout << "I really do!" << std::endl;
+	std::cout << "I really do!" << "\n\n" << std::flush;
 }
 
 void	Harl::info( void )
 {
 	std::cout << "[ INFO ]" << "\n";
 	std::cout << "I cannot believe adding extra bacon costs more money." << "\n";
-	std::cout << "You didn’t putenough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "You didn’t putenough bacon in my burger! If you did, I wouldn’t be asking for more!" << "\n\n" << std::flush;
 }
 
 void	Harl::warning( void )
 {
 	std::cout << "[ WARNING ]" << "\n";
 	std::cout << "I think I deserve to have some extra bacon for free." << "\n";
-	std::cout << "I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "I’ve been coming for years whereas you started working here since last month." << "\n\n" << std::flush;
 }
 
 void	Harl::error( void )
 {
 	std::cout << "[ ERROR ]" << "\n";
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << "\n\n" << std::flush;
 }
 

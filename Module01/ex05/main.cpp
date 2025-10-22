@@ -1,9 +1,10 @@
 #include "Harl.hpp"
 
-int main( int ac, char **av )
+int main( void )
 {
-	(void)ac;
-	Harl test;
+	{
+		Harl test;
 
-	test.complain( av[1] );
+		test.complain( "INFO" );
+	}
 }
