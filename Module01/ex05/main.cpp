@@ -5,6 +5,6 @@ int main( void )
 	{
 		Harl test;
 
-		test.complain( "INFO" );
+		test.complain( NULL );
 	}
 }

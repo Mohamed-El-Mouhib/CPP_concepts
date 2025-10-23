@@ -22,7 +22,7 @@ void	Harl::complain( std::string level )
 			(this->*table[i])(); return;
 		}
 	}
-	(this->*table[3])();
+	std::cout << "[ Provide A Valid LEVEL! I'm Not Doing it for YOU. ]" << std::endl;
 }
 
 void	Harl::debug( void )
