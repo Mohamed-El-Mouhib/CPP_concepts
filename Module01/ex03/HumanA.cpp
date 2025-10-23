@@ -1,7 +1,8 @@
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
-HumanA::HumanA( std::string n, Weapon w ) : weapon(w), name(n)
+HumanA::HumanA( std::string n, Weapon& w )
+: name(n), weapon(w)
 {
 }
 
