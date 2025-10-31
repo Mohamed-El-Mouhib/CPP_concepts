@@ -1,2 +1,2 @@
 # CPP_concepts
-just a random Cpp implements.
+A collection of C++ playground examples and OOP implementations...
