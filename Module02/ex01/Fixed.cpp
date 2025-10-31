@@ -1,18 +1,15 @@
 #include "Fixed.hpp"
-#include <iostream>
 
 const int	Fixed::_scale = 8;
 
-Fixed::Fixed( const int value )
+Fixed::Fixed( const int value ): _value( value * (1<<_scale) )
 {
 	std::cout << "int constructor called" << std::endl;
-	_value = value;
 }
 
-Fixed::Fixed( const float value )
+Fixed::Fixed( const float value ): _value( std::round(value * (1<< _scale)) )
 {
 	std::cout << "float constructor called" << std::endl;
-	_value = value;
 }
 
 Fixed::Fixed( void ): _value( 0 )
@@ -38,19 +35,29 @@ Fixed& Fixed::operator=( const Fixed &other )
 	std::cout << "Copy assignment operator called" << std::endl;
 	return *this;
 }
-std::ostream& Fixed::operator<<( std::ostream& cout, const Fixed& inserted)
+
+std::ostream& operator<<( std::ostream& out, const Fixed& inserted )
 {
-	cout << inserted._value;
-	return cout;
+	out << inserted.toFloat();
+	return out;
 }
+
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return _value;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	_value = raw;
+}
+
+int Fixed::toInt( void ) const
+{
+	return _value / (1 << _scale);
+}
+
+float Fixed::toFloat( void ) const
+{
+	return (float)_value / (1 << _scale);
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <iomanip>
 #include <ostream>
 
 class	Fixed
@@ -19,7 +18,11 @@ class	Fixed
 		Fixed( const float );
 		Fixed( const Fixed& );
 		~Fixed( void );
+	
+		int toInt( void ) const;
+		float toFloat( void ) const;
 
 		Fixed& operator=( const Fixed& );
-		std::ostream& operator<<( const Fixed& );
 };
+
+std::ostream& operator<<( std::ostream&, const Fixed& );
