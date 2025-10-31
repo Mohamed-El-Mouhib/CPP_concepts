@@ -61,3 +61,4 @@ float Fixed::toFloat( void ) const
 {
 	return (float)_value / (1 << _scale);
 }
+
