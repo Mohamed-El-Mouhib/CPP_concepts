@@ -35,6 +35,7 @@ class	Fixed
 		Fixed& operator--( void );
 		Fixed& operator++( void );
 		Fixed operator*( const Fixed& );
+		Fixed operator/( const Fixed& );
 		bool operator<( const Fixed& ) const;
 		bool operator<=( const Fixed& ) const;
 		bool operator>( const Fixed& ) const;

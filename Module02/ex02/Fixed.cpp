@@ -6,6 +6,8 @@ Fixed  Fixed::operator-( const Fixed& other ) { return Fixed(_value - other._val
 
 Fixed  Fixed::operator*( const Fixed& other ) { return Fixed(toFloat() * other.toFloat()); }
 
+Fixed  Fixed::operator/( const Fixed& other ) { return Fixed(toFloat() / other.toFloat()); }
+
 bool Fixed::operator<( const Fixed& other ) const { return (_value < other._value); }
 
 bool Fixed::operator<=( const Fixed& other ) const { return (_value <= other._value); }
