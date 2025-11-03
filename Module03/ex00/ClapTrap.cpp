@@ -1,7 +1,4 @@
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <ostream>
-#include <string>
 
 ClapTrap::ClapTrap( void )
 : _name( "unknown" ), _Hp( 10 ), _Ep( 10 ), _Ad( 0 )
