@@ -1,38 +1,22 @@
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void )
 {
+	FragTrap	Fobj;
 	{
-		ClapTrap Obj;
+		ScavTrap	Sobj( "Excalibur" );
+		{
+			ClapTrap	Cobj( "Pridwen" );
 
-		Obj.attack( "Ayoub" );
+			for (int i = 0; i < 3; i++)
+				Fobj.attack( "Pridwen" );
+			Sobj.attack( "Pridwen" );
+			Cobj.takeDamage( 110 );
+		}
+		for (int i = 0; i < 4; i++)
+			Fobj.attack( "Excalibur" );
+		Sobj.takeDamage( 120 );
 	}
-	std::cout << std::endl;
-	{
-		FragTrap Obj( "steve" );
-
-		Obj.attack( "Ayoub" );
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-		Obj.highFivesGuys();
-	}
-	std::cout << std::endl;
-	{
-		ClapTrap Obj;
-
-		Obj = FragTrap( "Marvele" );
-		Obj.attack( "Ayoub" );
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-	}
-	std::cout << std::endl;
-	{
-		ClapTrap Obj;
-
-		Obj = FragTrap( "Marvele" );
-		Obj.attack( "Ayoub" );
-		Obj.takeDamage(30);
-	}
+	Fobj.highFivesGuys();
 }

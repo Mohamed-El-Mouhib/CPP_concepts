@@ -1,32 +1,18 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include <iostream>
-#include <string>
 
 int main( void )
 {
-	{
-		ClapTrap Obj;
+	ScavTrap Obj( "Arthre" );
 
-		Obj.attack( "Ayoub" );
-	}
-	std::cout << std::endl;
+	Obj.guardGate();
 	{
-		ScavTrap Obj( "steve" );
-
-		Obj.attack( "Ayoub" );
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-	}
-	std::cout << std::endl;
-	{
-		ClapTrap Obj;
-
-		Obj = ScavTrap( "Marvele" );
-		Obj.attack( "Ayoub" );
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
-		Obj.takeDamage(30);
+		ClapTrap SecObj( "Pridwen" );
+		Obj.attack( "Pridwen" );
+		Obj.attack( "Pridwen" );
+		Obj.attack( "Pridwen" );
+		Obj.attack( "Pridwen" );
+		Obj.attack( "Pridwen" );
+		std::cout << std::endl;
+		SecObj.takeDamage( 100 );
 	}
 }
