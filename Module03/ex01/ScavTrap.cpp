@@ -15,7 +15,7 @@ ScavTrap::~ScavTrap( void )
 	std::cout << "ScavTrap " << _name << " is being Destroyed" << std::endl;
 }
 
-ScavTrap::ScavTrap( ScavTrap& other )
+ScavTrap::ScavTrap( const ScavTrap& other )
 : ClapTrap( other )
 {
 	this->_Hp = other._Hp;
@@ -42,4 +42,17 @@ void ScavTrap::attack( const std::string& target )
 void	ScavTrap::guardGate( void )
 {
 	std::cout << "ScavTrap" << _name << "is now in Gate leeper mode!!!" << std::endl;
+}
+
+ScavTrap&	ScavTrap::operator=( const ScavTrap& another )
+{
+	if (this != &another)
+	{
+		_name = another._name;
+		_Hp = another._Hp;
+		_Ep = another._Ep;
+		_Ad = another._Ad;
+	}
+
+	return *this;
 }
