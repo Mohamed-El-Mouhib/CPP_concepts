@@ -11,6 +11,7 @@ FragTrap::FragTrap( void )
 }
 
 FragTrap::FragTrap( const FragTrap& copy )
+:ClapTrap( copy )
 {
 	if (this != &copy)
 	{

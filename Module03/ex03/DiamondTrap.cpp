@@ -1,4 +1,6 @@
 #include "DiamondTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 DiamondTrap::DiamondTrap( void )
 :ClapTrap( "DefaultDiamond_clap_name" ), _name( "DefaultDiamond")
@@ -19,7 +21,7 @@ DiamondTrap::DiamondTrap( const std::string& name )
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap& other )
-:_name(other._name)
+:ClapTrap( other ), ScavTrap( other ), FragTrap( other ), _name(other._name)
 {
 	_Hp = other._Hp;
 	_Ep = other._Ep;
