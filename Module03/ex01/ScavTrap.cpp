@@ -41,7 +41,7 @@ void ScavTrap::attack( const std::string& target )
 }
 void	ScavTrap::guardGate( void )
 {
-	std::cout << "ScavTrap" << _name << "is now in Gate leeper mode!!!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is now in Gate Keeper mode!!!" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=( const ScavTrap& another )

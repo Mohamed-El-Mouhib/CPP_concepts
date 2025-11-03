@@ -36,7 +36,7 @@ void ScavTrap::attack( const std::string& target )
 	std::cout << "ScavTrap `" << _name << "` attacks " << target << ", causing " << _Ad << " points of damage!" << std::endl;
 	_Ep--;
 }
-void	ScavTrap::guardGate( void ) { std::cout << "ScavTrap" << _name << "is now in Gate leeper mode!!!" << std::endl; }
+void	ScavTrap::guardGate( void ) { std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!!!" << std::endl; }
 
 ScavTrap&	ScavTrap::operator=( const ScavTrap& another )
 {
