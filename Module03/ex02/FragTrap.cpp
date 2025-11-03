@@ -40,3 +40,15 @@ void	FragTrap::highFivesGuys( void )
 	for (int i = 1; i <= 5; i++)
 		std::cout << "high-fives" << std::endl;
 }
+FragTrap&	FragTrap::operator=( const FragTrap& another )
+{
+	if (this != &another)
+	{
+		_name = another._name;
+		_Hp = another._Hp;
+		_Ep = another._Ep;
+		_Ad = another._Ad;
+	}
+
+	return *this;
+}
