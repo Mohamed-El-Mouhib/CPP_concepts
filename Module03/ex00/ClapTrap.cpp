@@ -15,7 +15,7 @@ ClapTrap::ClapTrap( const std::string& name )
 	std::cout << "ClapTrap Parameterized Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap& another )
+ClapTrap::ClapTrap( const ClapTrap& another )
 :_name( another._name ), _Hp( another._Hp ), _Ep( another._Ep), _Ad( another._Ad ) 
 {
 	std::cout << "ClapTrap Copy Constructor called" << std::endl;
