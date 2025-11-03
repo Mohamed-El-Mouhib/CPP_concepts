@@ -2,27 +2,14 @@
 
 int main( void )
 {
-	{
-		ClapTrap Obj( "Mohamed" );
 
-		Obj.attack( "Ayoub" );
-		Obj.attack( "Redouane" );
-		Obj.attack( "Anass" );
-		Obj.attack( "Himself" );
-		Obj.attack( "Elmokhtar" );
+	ClapTrap Obj( "Mohamed" );
+	ClapTrap SecObj( "Ayoub" );
 
-		Obj.beRepaired( 10 );
-		Obj.beRepaired( 10 );
-		Obj.beRepaired( 10 );
-	}
-	std::cout << std::endl;
-	{
-		ClapTrap Obj;
+	Obj.attack( "Ayoub" );
+	SecObj.takeDamage( 0 );
 
-		Obj.attack( "Bogato" );
-		Obj.attack( "Rd1" );
-		Obj.attack( "Erabareta" );
-		Obj.attack( "Arthre" );
-	}
-	return 0;
+	Obj.attack( "Ayoub" );
+	SecObj.takeDamage( 0 );
+
 }
