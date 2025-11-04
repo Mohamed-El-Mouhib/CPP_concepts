@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap( void )
 }
 
 DiamondTrap::DiamondTrap( const std::string& name )
-:ClapTrap( name + "_clap_name" ), ScavTrap( name ), FragTrap( name ), _name( name)
+:ClapTrap( name ), ScavTrap( name ), FragTrap( name + "_clap_name" ), _name( name )
 {
 	_Hp = FragTrap::_Hp;
 	_Ep = ScavTrap::_Ep;
@@ -29,7 +29,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap& other )
 	std::cout << "DiamondTrap Copy Constructor called" << std::endl;
 }
 
-void	DiamondTrap::whoAmI( void ) { std::cout << _name << " DiamondTrap" << std::endl; }
+void	DiamondTrap::whoAmI( void ) { std::cout << _name << " " << ClapTrap::_name << std::endl; }
 
 void	DiamondTrap::attack( const std::string& target ) { ScavTrap::attack( target ); }
 
