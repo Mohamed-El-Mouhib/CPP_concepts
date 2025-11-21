@@ -2,12 +2,14 @@
 
 #include "AMateria.hpp"
 
-class Cure: AMateria
+class Cure: public AMateria
 {
 	public:
 		Cure( void );
 		Cure( const Cure& );
-		Cure( const std::string& );
 		Cure&	operator=( const Cure& );
 		~Cure( void );
+
+		Cure* clone() const ;
+		void use(ICharacter& target);
 };
