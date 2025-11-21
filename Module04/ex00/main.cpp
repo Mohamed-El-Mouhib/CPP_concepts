@@ -17,11 +17,11 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	l->makeSound();
-	std::cout << "Anass was here!" << std::endl;
 	//
 	delete meta;
 	delete j;
 	delete i;
-
+	delete l;
+	//
 	return 0;
 }
