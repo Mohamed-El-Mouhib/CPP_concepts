@@ -1,23 +1,26 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat( void )
+:WrongAnimal( "WrongCat")
 {
 	_type = "cat";
 	std::cout << "WrongCat Default constructor Called!" << std::endl;
 }
+
 WrongCat::~WrongCat( void )
 {
 	std::cout << "WrongCat destructor Called!" << std::endl;
 }
+
 WrongCat::WrongCat( const std::string& type )
+:WrongAnimal( type )
 {
-	_type = type;
 	std::cout << "WrongCat Parametrized constructor Called!" << std::endl;
 }
 
 WrongCat::WrongCat( const WrongCat& copy )
+:WrongAnimal( copy._type )
 {
-	_type = copy._type;
 	std::cout << "WrongCat Copy constructor Called!" << std::endl;
 }
 

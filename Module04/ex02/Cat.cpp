@@ -1,9 +1,8 @@
 #include "Cat.hpp"
 
 Cat::Cat( void )
-:_brainptr(new Brain())
+:Animal( "Cat" ), _brainptr(new Brain())
 {
-	_type = "cat";
 	std::cout << "Cat Default constructor Called!" << std::endl;
 }
 
@@ -14,7 +13,7 @@ Cat::~Cat( void )
 }
 
 Cat::Cat( const Brain& brain )
-:_brainptr(new Brain())
+:Animal( "Cat" ), _brainptr(new Brain())
 {
 	for (int i = 0; i < 100; i++)
 			_brainptr->ideas[i] = brain.ideas[i];
@@ -22,18 +21,16 @@ Cat::Cat( const Brain& brain )
 }
 
 Cat::Cat( const std::string& type )
-:_brainptr(new Brain())
+:Animal( type ), _brainptr(new Brain())
 {
-	_type = type;
 	std::cout << "Cat Parametrized constructor Called!" << std::endl;
 }
 
 Cat::Cat( const Cat& copy )
-:_brainptr(new Brain())
+:Animal( copy._type ), _brainptr(new Brain())
 {
 	for (int i = 0; i < 100; i++)
 		_brainptr->ideas[i] = copy._brainptr->ideas[i];
-	_type = copy._type;
 	std::cout << "Cat Copy constructor Called!" << std::endl;
 }
 
