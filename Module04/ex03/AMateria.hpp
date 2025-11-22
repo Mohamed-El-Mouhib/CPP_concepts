@@ -10,10 +10,10 @@ class AMateria
 
 	public:
 		AMateria( void );
-		AMateria( std::string const& );
 		AMateria( AMateria& );
-		AMateria& operator=( const AMateria& );
 		virtual ~AMateria( void );
+		AMateria( std::string const& );
+		AMateria& operator=( const AMateria& );
 
 		std::string const& getType() const; //Returns the materia type
 

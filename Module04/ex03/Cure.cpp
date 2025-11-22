@@ -2,13 +2,11 @@
 
 Cure::Cure( void )
 : AMateria( "cure" )
-{
-}
+{ }
 
 Cure::Cure( const Cure& another )
 :AMateria( another._type )
-{
-}
+{ }
 
 Cure& Cure::operator=( const Cure& another )
 {
@@ -19,8 +17,7 @@ Cure& Cure::operator=( const Cure& another )
 }
 
 Cure::~Cure( void )
-{
-}
+{ }
 
 Cure* Cure::clone( void ) const
 {

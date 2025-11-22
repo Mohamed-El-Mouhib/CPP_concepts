@@ -2,18 +2,15 @@
 
 AMateria::AMateria( void )
 :_type( "AMateria" )
-{
-}
+{ }
 
 AMateria::AMateria( std::string const& type )
 :_type( type )
-{
-}
+{ }
 
 AMateria::AMateria( AMateria& another )
 :_type( another._type )
-{
-}
+{ }
 
 AMateria& AMateria::operator=( const AMateria& another )
 {
@@ -24,8 +21,7 @@ AMateria& AMateria::operator=( const AMateria& another )
 }
 
 AMateria::~AMateria( void )
-{
-}
+{ }
 
 std::string const& AMateria::getType() const //Returns the materia type
 {
