@@ -6,7 +6,7 @@ NAME   = Animal
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CPPFLAGS) $(SRC) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf *.o
