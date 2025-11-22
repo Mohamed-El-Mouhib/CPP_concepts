@@ -1,8 +1,8 @@
 #include "Cat.hpp"
 
 Cat::Cat( void )
+:Animal( "cat" )
 {
-	_type = "cat";
 	std::cout << "Cat Default constructor Called!" << std::endl;
 }
 Cat::~Cat( void )
@@ -10,14 +10,14 @@ Cat::~Cat( void )
 	std::cout << "Cat destructor Called!" << std::endl;
 }
 Cat::Cat( const std::string& type )
+:Animal( type )
 {
-	_type = type;
 	std::cout << "Cat Parametrized constructor Called!" << std::endl;
 }
 
 Cat::Cat( const Cat& copy )
+:Animal( copy._type )
 {
-	_type = copy._type;
 	std::cout << "Cat Copy constructor Called!" << std::endl;
 }
 

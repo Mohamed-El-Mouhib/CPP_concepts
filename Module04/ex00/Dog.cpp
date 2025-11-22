@@ -1,8 +1,9 @@
 #include "Dog.hpp"
+#include "Animal.hpp"
 
 Dog::Dog( void )
+:Animal( "dog" )
 {
-	_type = "Dog";
 	std::cout << "Dog Default constructor Called!" << std::endl;
 }
 Dog::~Dog( void )
@@ -10,14 +11,15 @@ Dog::~Dog( void )
 	std::cout << "Dog destructor Called!" << std::endl;
 }
 Dog::Dog( const std::string& type )
+:Animal( type )
 {
 	_type = type;
 	std::cout << "Dog Parametrized constructor Called!" << std::endl;
 }
 
 Dog::Dog( const Dog& copy )
+:Animal( copy._type )
 {
-	_type = copy._type;
 	std::cout << "Dog Copy constructor Called!" << std::endl;
 }
 
