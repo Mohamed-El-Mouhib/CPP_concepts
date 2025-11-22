@@ -1,9 +1,9 @@
 #include "Dog.hpp"
+#include "Animal.hpp"
 
 Dog::Dog( void )
-:_brainptr(new Brain())
+:Animal( "Dog" ), _brainptr(new Brain())
 {
-	_type = "Dog";
 	std::cout << "Dog Default constructor Called!" << std::endl;
 }
 
@@ -14,7 +14,7 @@ Dog::~Dog( void )
 }
 
 Dog::Dog( const Brain& brain )
-:_brainptr(new Brain())
+:Animal( "Dog" ), _brainptr(new Brain())
 {
 	for (int i = 0; i < 100; ++i)
 		_brainptr->ideas[i] = brain.ideas[i];
@@ -22,14 +22,14 @@ Dog::Dog( const Brain& brain )
 }
 
 Dog::Dog( const std::string& type )
-:_brainptr(new Brain())
+:Animal( type ), _brainptr(new Brain())
 {
 	_type = type;
 	std::cout << "Dog Parametrized constructor Called!" << std::endl;
 }
 
 Dog::Dog( const Dog& copy )
-:_brainptr(new Brain())
+:Animal( copy._type ), _brainptr(new Brain())
 {
 	for (int i = 0; i < 100; i++)
 		_brainptr->ideas[i] = copy._brainptr->ideas[i];
