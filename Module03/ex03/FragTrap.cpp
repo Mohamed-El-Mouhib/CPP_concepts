@@ -13,19 +13,12 @@ FragTrap::FragTrap( void )
 FragTrap::FragTrap( const FragTrap& copy )
 :ClapTrap( copy )
 {
-	if (this != &copy)
-	{
-		_name = copy._name;
-		_Hp = copy._Hp;
-		_Ep = copy._Ep;
-		_Ad = copy._Ad;
-	}
 	std::cout << "FragTrap Copy constructor Called!" << std::endl;
 }
 
 FragTrap::FragTrap( const std::string& name )
+:ClapTrap( name )
 {
-	_name = name;
 	_Hp = 100;
 	_Ep = 100;
 	_Ad = 30;
