@@ -2,8 +2,8 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap( void )
+:ClapTrap( "DefaultScav" )
 {
-	_name = "DefaultScav";
 	_Hp = 100;
 	_Ep = 50;
 	_Ad = 20;
@@ -15,9 +15,6 @@ ScavTrap::~ScavTrap( void ) { std::cout << "ScavTrap " << _name << " is being De
 ScavTrap::ScavTrap( const ScavTrap& other )
 : ClapTrap( other )
 {
-	this->_Hp = other._Hp;
-	this->_Ep = other._Ep;
-	this->_Ad = other._Ad;
 	std::cout << "ScavTrap Copy Constructor called" << std::endl;
 }
 
